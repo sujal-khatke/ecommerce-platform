@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
             required : [true, 'Product description is required'],
             validate:{
                 validator: function(value){
-                    return /^[A-Za-z\s]+$/.test(value);
+                    return /^[A-Za-z0-9\s]+$/.test(value);
                 },
                 message: 'Description is only contain alphabets'
             }

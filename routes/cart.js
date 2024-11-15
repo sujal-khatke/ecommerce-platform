@@ -52,7 +52,7 @@ router.post('/add', async (req, res) => {
 });
 
 // Update Cart
-router.post('/update', async (req, res) => {
+router.put('/update', async (req, res) => {
   const { userId, productId, quantity } = req.body;
 
   // Validation
@@ -92,7 +92,7 @@ router.post('/update', async (req, res) => {
 });
 
 // Delete Product from Cart
-router.post('/delete', async (req, res) => {
+router.delete('/delete', async (req, res) => {
   const { userId, productId } = req.body;
 
   // Validation
@@ -126,7 +126,7 @@ router.post('/delete', async (req, res) => {
 
 // Get Cart Details
 router.get('/', async (req, res) => {
-  const { userId } = req.query;
+  const { userId } = req.body;
 
   // Validation
   if (!userId) {
